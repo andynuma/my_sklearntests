@@ -1,3 +1,9 @@
+"""
+IMDbのレビューをBoWに変換しそのあと定量的にクラス分類器を作成し評価するプログラム
+（注意）クラス分類器はネガポジの分類とは関係がない
+最初はそのままBoWにしている
+そのあとは5つ以上の文書に含まれる単語のみを選んでBoWに
+"""
 from sklearn.datasets import load_files
 from sklearn.feature_extraction.text import CountVectorizer
 import numpy as np
