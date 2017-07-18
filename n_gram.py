@@ -15,3 +15,12 @@ print("----------cv.feature_names---------:",cv.get_feature_names())
 #例えば一つ目の配列には"The fool doth think he is wise"について、
 #出現しているfeature_namesのインデックスが1になっている
 print(cv.transform(bards_words).toarray())
+
+
+#パイプラインを使って1,2,3グラムのどれが最適化どうかを調べるver
+# pipe = make_pipeline(TfidfVectorizer(min_df=5),LogisticRegression())
+# param_grid = {"logisticregression__C":[0.001,0.01,0.1,1,10,100],
+#              "tfidfvectorizer__ngram_range":[(1,1),(1,2),(1,3)]}
+# grid = GridSearchCV(pipe,param_grid,cv=5)
+# grid.fit(text_train,y_train)
+# print(grid.best_score_)
